@@ -20,21 +20,21 @@ public class SortingController {
         this.sortingService = sortingService;
     }
 
-    // GET endpoint for bubble sort
+
     @GetMapping("/bubble")
     public ResponseEntity<SortResponse> bubbleSort(@RequestParam int[] data) {
         SortResponse response = sortingService.sortWithBubbleSort(data);
         return ResponseEntity.ok(response);
     }
 
-    // GET endpoint for selection sort
+
     @GetMapping("/selection")
     public ResponseEntity<SortResponse> selectionSort(@RequestParam int[] data) {
         SortResponse response = sortingService.sortWithSelectionSort(data);
         return ResponseEntity.ok(response);
     }
 
-    // GET endpoint for quick sort
+
     @GetMapping("/quick")
     public ResponseEntity<SortResponse> quickSort(@RequestParam int[] data) {
         SortResponse response = sortingService.sortWithQuickSort(data);
@@ -57,7 +57,7 @@ public class SortingController {
         }
     }
 
-    // CRUD-like endpoint to get available algorithms
+
     @GetMapping("/algorithms")
     public ResponseEntity<String[]> getAvailableAlgorithms() {
         String[] algorithms = {"bubble", "selection", "quick"};

@@ -16,7 +16,7 @@ public class SelectionSort extends SortingAlgorithm {
                     minIndex = j;
                 }
             }
-            // Swap the found minimum element with the first element
+
             int temp = sortedArray[minIndex];
             sortedArray[minIndex] = sortedArray[i];
             sortedArray[i] = temp;
