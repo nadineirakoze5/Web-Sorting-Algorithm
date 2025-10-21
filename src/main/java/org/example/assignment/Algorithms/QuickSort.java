@@ -26,14 +26,13 @@ public class QuickSort extends SortingAlgorithm {
         for (int j = low; j < high; j++) {
             if (array[j] < pivot) {
                 i++;
-                // Swap array[i] and array[j]
                 int temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
             }
         }
 
-        // Swap array[i+1] and array[high] (or pivot)
+
         int temp = array[i + 1];
         array[i + 1] = array[high];
         array[high] = temp;

@@ -4,14 +4,12 @@ public class SortResponse {
     private int[] originalArray;
     private int[] sortedArray;
     private String algorithm;
-    private long executionTime;
     private String message;
 
-    public SortResponse(int[] originalArray, int[] sortedArray, String algorithm, long executionTime) {
+    public SortResponse(int[] originalArray, int[] sortedArray, String algorithm) {
         this.originalArray = originalArray;
         this.sortedArray = sortedArray;
         this.algorithm = algorithm;
-        this.executionTime = executionTime;
         this.message = "Sorted successfully using " + algorithm;
     }
 
@@ -38,14 +36,6 @@ public class SortResponse {
 
     public void setAlgorithm(String algorithm) {
         this.algorithm = algorithm;
-    }
-
-    public long getExecutionTime() {
-        return executionTime;
-    }
-
-    public void setExecutionTime(long executionTime) {
-        this.executionTime = executionTime;
     }
 
     public String getMessage() {

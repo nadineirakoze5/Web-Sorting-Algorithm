@@ -6,7 +6,6 @@ import org.example.assignment.Service.SortingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.Arrays;
 
 @RestController
 @RequestMapping("/api/sort")
@@ -41,7 +40,7 @@ public class SortingController {
         return ResponseEntity.ok(response);
     }
 
-    // POST endpoint for dynamic algorithm selection
+
     @PostMapping("/{algorithm}")
     public ResponseEntity<SortResponse> sortWithAlgorithm(
             @PathVariable String algorithm,
@@ -52,7 +51,7 @@ public class SortingController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(
                     new SortResponse(dataSet.getNumbers(), dataSet.getNumbers(),
-                            "Unknown Algorithm", 0)
+                            "Unknown Algorithm")
             );
         }
     }
@@ -64,7 +63,7 @@ public class SortingController {
         return ResponseEntity.ok(algorithms);
     }
 
-    // Health check endpoint
+
     @GetMapping("/health")
     public ResponseEntity<String> healthCheck() {
         return ResponseEntity.ok("Sorting API is running!");

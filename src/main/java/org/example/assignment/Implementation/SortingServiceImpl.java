@@ -17,7 +17,7 @@ public class SortingServiceImpl implements SortingService {
     private final SortingAlgorithm quickSort;
     private final Map<String, SortingAlgorithm> algorithmMap;
 
-    // Constructor Injection with @Autowired (optional in newer Spring versions)
+
     @Autowired
     public SortingServiceImpl(
             @Qualifier("bubbleSort") SortingAlgorithm bubbleSort,
@@ -27,7 +27,7 @@ public class SortingServiceImpl implements SortingService {
         this.selectionSort = selectionSort;
         this.quickSort = quickSort;
 
-        // Map algorithm names to implementations
+
         this.algorithmMap = new HashMap<>();
         this.algorithmMap.put("bubble", bubbleSort);
         this.algorithmMap.put("selection", selectionSort);
@@ -59,11 +59,7 @@ public class SortingServiceImpl implements SortingService {
     }
 
     private SortResponse performSort(int[] data, SortingAlgorithm algorithm) {
-        long startTime = System.nanoTime();
         int[] sortedArray = algorithm.sort(data);
-        long endTime = System.nanoTime();
-        long executionTime = (endTime - startTime) / 1000000; // Convert to milliseconds
-
-        return new SortResponse(data, sortedArray, algorithm.getAlgorithmName(), executionTime);
+        return new SortResponse(data, sortedArray, algorithm.getAlgorithmName());
     }
 }
