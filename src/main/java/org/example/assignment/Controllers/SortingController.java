@@ -50,8 +50,7 @@ public class SortingController {
             return ResponseEntity.ok(response);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(
-                    new SortResponse(dataSet.getNumbers(), dataSet.getNumbers(),
-                            "Unknown Algorithm")
+                    new SortResponse(dataSet.getNumbers(), dataSet.getNumbers(), "Unknown Algorithm")
             );
         }
     }

@@ -1,12 +1,22 @@
 package org.example.assignment.Models;
 
 public class DataSet {
+    private Long id;
     private int[] numbers;
     private String name;
 
-    public DataSet(int[] numbers, String name) {
-        this.setNumbers(numbers);
-        this.setName(name);
+    public DataSet(Long id, int[] numbers, String name) {
+        this.id = id;
+        this.numbers = numbers;
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int[] getNumbers() {
